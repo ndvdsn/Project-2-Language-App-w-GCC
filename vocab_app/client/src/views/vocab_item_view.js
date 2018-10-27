@@ -3,14 +3,14 @@ const PubSub = require('../helpers/pub_sub.js');
 const VocabItemView = function (container) {
   this.container = container;
 };
-
-VocabItemView.prototype.bindEvents = function () {
-  PubSub.subscribe('Vocab:data-retrieved', (event) => {
-    this.renderItem(event.detail[1]);
-
-  }
-)
-};
+// 
+// VocabItemView.prototype.bindEvents = function () {
+//   PubSub.subscribe('Vocab:data-retrieved', (event) => {
+//     this.renderItem(event.detail[1]);
+//
+//   }
+// )
+// };
 
 VocabItemView.prototype.renderItem = function (vocabItem) {
   const itemDiv = document.createElement('div');
@@ -49,6 +49,10 @@ VocabItemView.prototype.clickImage = function (image, vocabItem) {
     const nameStyleSetting = document.querySelector(`#name-${vocabItem._id}`)
     if (nameStyleSetting.style.display === "none") {
       nameStyleSetting.style.display = "block"
+
+      const newUtterance = new SpeechSynthesisUtterance(`${vocabItem.name}`);
+      speechSynthesis.speak(newUtterance)
+
 
     }
       else {
