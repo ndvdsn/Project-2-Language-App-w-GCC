@@ -1,7 +1,7 @@
-use esol_stuff;
+use esol_vocabulary;
 db.dropDatabase();
 
-db.items.insertMany([
+db.vocabulary.insertMany([
   {
     name: "cat",
     pronunciation_aid: "null",
