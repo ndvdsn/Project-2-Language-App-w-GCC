@@ -3,7 +3,7 @@ const PubSub = require('../helpers/pub_sub.js');
 const VocabItemView = function (container) {
   this.container = container;
 };
-// 
+
 // VocabItemView.prototype.bindEvents = function () {
 //   PubSub.subscribe('Vocab:data-retrieved', (event) => {
 //     this.renderItem(event.detail[1]);

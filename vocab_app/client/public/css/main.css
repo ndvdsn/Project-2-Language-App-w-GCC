@@ -2,3 +2,18 @@
   max-height: 200px;
   max-width: auto;
 }
+
+body {
+  font: comic;
+  font-style: normal;
+  color:#1c0033;
+  background-color: #fcfcf7;
+
+}
+
+.item-div{
+
+  display: inline-block;
+
+
+}
