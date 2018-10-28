@@ -27,21 +27,30 @@ VocabItemView.prototype.renderItem = function (vocabItem) {
 };
 
 VocabItemView.prototype.createName = function (vocabItem) {
+  const nameDiv = document.createElement('div')
+  nameDiv.classList.add('nameDiv')
   const name = document.createElement('p');
+  nameDiv.appendChild(name)
   name.classList.add('vocab-item-name')
-  name.id = `name-${vocabItem._id}`;
-  name.style.display = "none";
+  nameDiv.id = `name-${vocabItem._id}`;
+  nameDiv.style.display = "none";
   name.textContent = vocabItem.name
-  return name;
+  const speakerBtn = document.createElement('button')
+  speakerBtn.backgroundImage = "url('images/speaker.jpeg')";
+  nameDiv.appendChild(speakerBtn)
+  return nameDiv;
 };
 
 VocabItemView.prototype.createImage = function (vocabItem) {
+  const imageDiv = document.createElement('div')
+  imageDiv.classList.add('imageDiv')
   const image = document.createElement('img');
+  imageDiv.appendChild(image)
   image.src = vocabItem.image
   image.id = `img-${vocabItem._id}`;
   image.classList.add('vocab-item-image')
   this.clickImage(image, vocabItem)
-  return image;
+  return imageDiv;
 };
 
 VocabItemView.prototype.clickImage = function (image, vocabItem) {

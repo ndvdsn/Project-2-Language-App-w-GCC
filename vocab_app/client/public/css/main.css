@@ -1,9 +1,12 @@
 .vocab-item-image {
-  max-height: 200px;
-  max-width: auto;
+  height: 200px;
+  width: 200px;
+  padding: 20px;
 }
 
 body {
+  padding:0;
+  margin:0;
   font: comic;
   font-style: normal;
   color:#1c0022;
@@ -13,7 +16,24 @@ body {
 
 .item-div{
 
-  display: inline-block;
+  background-color: white;
+  padding: 20px;
+  height:400px;
 
+}
+
+.banner{
+min-height: 200px;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.nameDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 
 }
