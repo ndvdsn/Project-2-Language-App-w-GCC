@@ -1,9 +1,3 @@
-.vocab-item-image {
-  height: 200px;
-  width: 200px;
-  padding: 20px;
-}
-
 body {
   padding:0;
   margin:0;
@@ -14,12 +8,11 @@ body {
 
 }
 
-.item-div{
-
-  background-color: white;
-  padding: 20px;
-  height:400px;
-
+button{
+width: 50px;
+height: 50px;
+border-radius:50%;
+background-size: 100%;
 }
 
 .banner{
@@ -31,9 +24,23 @@ min-height: 200px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
+.item-div{
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  /* min-height:200px; */
+
+}
+
+.vocab-item-image {
+  height: 200px;
+  width: 200px;
+  padding: 20px;
+}
+
 .nameDiv{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
 
 }

@@ -36,8 +36,9 @@ VocabItemView.prototype.createName = function (vocabItem) {
   nameDiv.style.display = "none";
   name.textContent = vocabItem.name
   const speakerBtn = document.createElement('button')
-  speakerBtn.backgroundImage = "url('images/speaker.jpeg')";
+  speakerBtn.style.backgroundImage = "url('images/speaker2.png')";
   nameDiv.appendChild(speakerBtn)
+  this.clickSpeaker(speakerBtn, vocabItem)
   return nameDiv;
 };
 
@@ -53,6 +54,13 @@ VocabItemView.prototype.createImage = function (vocabItem) {
   return imageDiv;
 };
 
+VocabItemView.prototype.clickSpeaker = function (speaker, vocabItem) {
+  speaker.addEventListener('click', () => {
+    const newUtterance = new SpeechSynthesisUtterance(`${vocabItem.name}`);
+    speechSynthesis.speak(newUtterance)
+  })
+
+};
 VocabItemView.prototype.clickImage = function (image, vocabItem) {
   image.addEventListener('click', () => {
     const nameStyleSetting = document.querySelector(`#name-${vocabItem._id}`)
