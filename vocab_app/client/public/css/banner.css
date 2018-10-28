@@ -11,18 +11,29 @@
 }
 
 .Winter{
-  background-image: url('images/winter.jpeg');
+  background-image: url('../images/winter.jpeg');
+  background-size:contain;
+  color:#1f295c;
+  align-self: flex-start;
 }
 
 .Summer{
-
+  background-image: url('../images/summer.jpeg');
+  background-size: cover;
+  color: #FCFAFF;
+  font-weight: bolder;
 }
 
 .Spring{
-
+  background-image: url('../images/spring.jpeg');
+  background-size: cover;
+  color: #FCFAFF;
+  font-weight: bolder;
 }
 
 .Autumn{
-  background-image: url("images/autumn.jpeg");
+  background-image: url("../images/autumn.jpeg");
   background-size: cover;
+  color: #FCFAFF;
+  font-weight: bolder;
 }
