@@ -6,9 +6,6 @@ const BannerView = function (container) {
 BannerView.prototype.getSeason = function () {
   date = new Date();
   var mon = date.getMonth() + 1;
-
-  var seasons = ['Winter','Winter','Spring','Spring','Spring','Summer','Summer','Summer','Autumn','Autumn','Autumn','Winter'];
-
 //just returns winter
 // if (mon === 11||12||1){
 //   return "Winter"
@@ -20,6 +17,7 @@ BannerView.prototype.getSeason = function () {
 //   return "Autumn"
 // }
 
+  var seasons = ['Winter','Winter','Spring','Spring','Spring','Summer','Summer','Summer','Autumn','Autumn','Autumn','Winter'];
 
   return seasons[mon];
 

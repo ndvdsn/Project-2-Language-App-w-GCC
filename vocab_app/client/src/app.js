@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainContainer = document.querySelector(".main-container");
   const vocabGrid = new VocabGridView(mainContainer);
   vocabGrid.bindEvents()
+  //vocabGrid.populateCategoryDropdown()
 
   // const vocabItem = new VocabItemView(mainContainer);
   // vocabItem.bindEvents()
@@ -20,4 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const vocab = new Vocab();
   // vocab.bindEvents();
   vocab.getData();
+  vocab.getCategories();
+
 });
