@@ -9,9 +9,10 @@ const VocabGridView = function (container) {
 
 
 VocabGridView.prototype.bindEvents = function () {
+  this.getSelection()
   PubSub.subscribe('Vocab:data-retrieved', (event) => {
-    const vocabData = event.detail
-    this.showMultiple(vocabData)
+    const vocabData = event.detail;
+    this.showMultiple(vocabData);
 
   });
   PubSub.subscribe('Vocab:uniqueCategoriesRetrieved', (event) => {
@@ -28,6 +29,16 @@ VocabGridView.prototype.showMultiple = function (vocabData) {
   vocabData.forEach((item) => vocabItemView.renderItem(item))
 };
 
+VocabGridView.prototype.getSelection = function () {
+  const categoryContainer = document.querySelector(`.cat-${}`)
+  console.log(categoryContainer);
+  //categoryContainer.addEventListener('click', () => {
+    console.log('you clicked?');
+    //PubSub.publish('vocabGridView:publishValue')
+  }
+//)
+
+//};
 VocabGridView.prototype.populateCategoryDropdown = function (categoryList) {
   const vocab = new Vocab;
 
@@ -40,9 +51,10 @@ VocabGridView.prototype.populateCategoryDropdown = function (categoryList) {
 };
 
 VocabGridView.prototype.createLi = function (category, index) {
-  const catUl = document.createElement('a');
-  catUl.value = index;
-  catUl.textContent = category
-  return catUl
+  const catAnchor = document.createElement('a');
+  catAnchor.classList.add('cat-${index}')
+  catAnchor.value = index;
+  catAnchor.textContent = category
+  return catAnchor
 };
 module.exports = VocabGridView;
