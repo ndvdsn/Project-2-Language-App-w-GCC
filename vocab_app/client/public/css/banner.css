@@ -1,0 +1,28 @@
+.banner{
+
+}
+.header{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  padding: 50px;
+  height: 100%;
+}
+
+.Winter{
+  background-image: url('images/winter.jpeg');
+}
+
+.Summer{
+
+}
+
+.Spring{
+
+}
+
+.Autumn{
+  background-image: url("images/autumn.jpeg");
+  background-size: cover;
+}

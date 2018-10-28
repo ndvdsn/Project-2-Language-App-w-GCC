@@ -65,7 +65,7 @@ VocabItemView.prototype.clickImage = function (image, vocabItem) {
   image.addEventListener('click', () => {
     const nameStyleSetting = document.querySelector(`#name-${vocabItem._id}`)
     if (nameStyleSetting.style.display === "none") {
-      nameStyleSetting.style.display = "block"
+      nameStyleSetting.style.display = "flex"
 
       const newUtterance = new SpeechSynthesisUtterance(`${vocabItem.name}`);
       speechSynthesis.speak(newUtterance)
