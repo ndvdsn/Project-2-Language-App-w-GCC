@@ -45,10 +45,20 @@ SingleQuizView.prototype.createImage = function (quizItem) {
 SingleQuizView.prototype.createSentence = function (quizItem) {
   const sentenceDiv = document.createElement('div')
   sentenceDiv.classList.add('sentenceDiv')
-  const sentence = document.createElement('p');
-  sentenceDiv.appendChild(sentence)
-  sentence.classList.add('quiz-item-sentence')
-  sentenceDiv.textContent = quizItem.sentence1;
+  const sentencea = document.createElement('p');
+  sentenceDiv.appendChild(sentencea)
+  sentencea.classList.add('quiz-item-sentence')
+  sentencea.style.display = "inline-flex"
+  sentencea.textContent = quizItem.sentence1[0];
+  const form = document.createElement('form')
+  sentencea.appendChild(form)
+  const input = document.createElement('input')
+  input.type = "text";
+  form.appendChild(input)
+  const sentenceb = document.createElement('p')
+  sentenceb.textContent = quizItem.sentence1[1];
+  sentenceb.style.display = "contents"
+  sentencea.appendChild(sentenceb)
   return sentenceDiv;
 
 }
