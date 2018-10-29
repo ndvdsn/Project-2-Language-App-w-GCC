@@ -5,27 +5,31 @@ const SingleQuizView = function (container) {
 };
 
 SingleQuizView.prototype.bindEvents = function () {
-  debugger;
   PubSub.subscribe('MissingWordQuiz:data-retrieved', (event) => {
-    console.log('are you getting this far?');
-    // console.log(event.detail[0]);
-    this.renderQuizItem(event.detail[0]);
+    const quizClick = document.querySelector('.quiz-select')
+
+    quizClick.addEventListener('click', () => {
+        console.log(event.detail[0]);
+        this.renderQuizItem(event.detail[0]);
+    })
+
   });
 
 };
 
 SingleQuizView.prototype.renderQuizItem = function (quizItem) {
+  this.container.innerHTML = " "
   const itemDiv = document.createElement('div');
-  itemDiv.id = `quiz-item-${index}`
+  itemDiv.id = `quiz-item-${quizItem.index}`
   itemDiv.classList.add('item-div')
-
+  this.container.appendChild(itemDiv);
   const image = this.createImage(quizItem);
   itemDiv.appendChild(image);
 
   const sentence = this.createSentence(quizItem);
   itemDiv.appendChild(sentence);
 
-  this.container.appendChild(itemDiv);
+
 };
 
 SingleQuizView.prototype.createImage = function (quizItem) {
@@ -34,7 +38,6 @@ SingleQuizView.prototype.createImage = function (quizItem) {
   const image = document.createElement('img');
   imageDiv.appendChild(image)
   image.src = quizItem.image
-  // image.id = `img-${quizItem._id}`;
   image.classList.add('quiz-item-image')
   return imageDiv;
 };
@@ -45,20 +48,11 @@ SingleQuizView.prototype.createSentence = function (quizItem) {
   const sentence = document.createElement('p');
   sentenceDiv.appendChild(sentence)
   sentence.classList.add('quiz-item-sentence')
-  sentenceDiv.textContent = quizItem.sentence1[0][1];
+  sentenceDiv.textContent = quizItem.sentence1;
   return sentenceDiv;
 
 }
 
-// SingleQuizView.prototype.getQuizSelection = function () {
-//   const quizContainer = document.querySelector('.quiz-select')
-//     quizContainer.addEventListener('click', (event) => {
-//
-//     this.bindEvents()
-//
-// })
-//
-// }
 
 
 module.exports = SingleQuizView;

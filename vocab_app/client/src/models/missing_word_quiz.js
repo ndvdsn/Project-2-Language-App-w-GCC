@@ -13,10 +13,10 @@ MissingWordQuiz.prototype.getQuizData = function () {
   .then((data) => {
     data.forEach((item) => {
     this.quizData.push({name: item.name, image: item.image, sentence1: item.sentence1.split(item.name)})
+    return this.quizData;
 
   })
-
-  PubSub.publish('MissingWordQuiz:data-retrieved', this.quizData)
+    PubSub.publish('MissingWordQuiz:data-retrieved', this.quizData)
 })
   .catch(console.error);
 };
