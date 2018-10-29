@@ -9,8 +9,10 @@ SingleQuizView.prototype.bindEvents = function () {
     const quizClick = document.querySelector('.quiz-select')
 
     quizClick.addEventListener('click', () => {
-        console.log(event.detail[0]);
-        this.renderQuizItem(event.detail[0]);
+      const objectArray = event.detail
+    const object = objectArray[Math.floor(Math.random()*objectArray.length)];
+    
+        this.renderQuizItem(object);
     })
 
   });

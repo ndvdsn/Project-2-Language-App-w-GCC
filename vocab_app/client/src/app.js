@@ -15,10 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const mainContainer = document.querySelector(".grid-view");
   const vocabGrid = new VocabGridView(mainContainer);
   vocabGrid.bindEvents()
-  //vocabGrid.populateCategoryDropdown()
-
-  // const vocabItem = new VocabItemView(mainContainer);
-  // vocabItem.bindEvents()
 
 
   const quizItem = new SingleQuizView(mainContainer);
