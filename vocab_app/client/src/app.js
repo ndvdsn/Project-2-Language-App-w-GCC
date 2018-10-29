@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const bannerClass = bannerView.getSeason();
   bannerContainer.classList.add(bannerClass)
   console.log('Currently it is ' + bannerView.getSeason());
-  const mainContainer = document.querySelector(".main-container");
+  const mainContainer = document.querySelector(".grid-view");
   const vocabGrid = new VocabGridView(mainContainer);
   vocabGrid.bindEvents()
   //vocabGrid.populateCategoryDropdown()
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // vocabItem.bindEvents()
 
   const vocab = new Vocab();
-  // vocab.bindEvents();
+  vocab.bindEvents();
   vocab.getData();
   vocab.getCategories();
 

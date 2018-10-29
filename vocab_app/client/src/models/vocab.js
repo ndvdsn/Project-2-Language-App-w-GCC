@@ -36,6 +36,7 @@ Vocab.prototype.getByCategory = function (index) {
   this.request.get()
   .then((data) =>{
   const categoryChosen = this.categoryList[index]
-  data.filter((item) => {return item.category === categoryChosen})
+  const categoryFiltered = data.filter((item) => {return item.category === categoryChosen})
+  PubSub.publish('Vocab:data-retrieved', categoryFiltered)
 })};
 module.exports = Vocab;
