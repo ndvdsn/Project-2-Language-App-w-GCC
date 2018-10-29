@@ -2,6 +2,8 @@ const Vocab = require('./models/vocab.js');
 const VocabItemView = require('./views/vocab_item_view.js');
 const VocabGridView = require('./views/vocab_grid_view.js');
 const BannerView = require('./views/banner_view.js');
+const MissingWordQuiz = require('./models/missing_word_quiz.js');
+
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('javascript loaded');
@@ -18,7 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // const vocabItem = new VocabItemView(mainContainer);
   // vocabItem.bindEvents()
 
+
+  const missingWordQuiz = new MissingWordQuiz();
+  missingWordQuiz.getQuizData()
+
+
+
   const vocab = new Vocab();
+
   vocab.bindEvents();
   vocab.getData();
   vocab.getCategories();
