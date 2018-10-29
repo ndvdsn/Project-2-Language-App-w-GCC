@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const missingWordQuiz = new MissingWordQuiz();
-  missingWordQuiz.getQuizData()
+  // missingWordQuiz.getQuizData() //test purposes
 
 
 
