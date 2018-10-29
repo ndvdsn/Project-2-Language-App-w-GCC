@@ -4,6 +4,13 @@ const SingleQuizView = function (container) {
   this.container = container;
 };
 
+// VocabItemView.prototype.bindEvents = function () {
+//   PubSub.subscribe('Vocab:data-retrieved', (event) => {
+//     this.renderItem(event.detail[1]);
+//
+//   }
+// )
+// };
 
 
 SingleQuizView.prototype.bindEvents = function () {
@@ -22,6 +29,8 @@ SingleQuizView.prototype.renderQuizItem = function (quizItem) {
   const image = this.createImage(quizItem);
   itemDiv.appendChild(image);
 
+  const sentence = this.createSentence(quizItem);
+  itemDiv.appendChild(sentence);
 
   this.container.appendChild(itemDiv);
 };
@@ -37,5 +46,17 @@ SingleQuizView.prototype.createImage = function (quizItem) {
   return imageDiv;
 };
 
+SingleQuizView.prototype.createSentence = function (quizItem) {
+  const sentenceDiv = document.createElement('div')
+  sentenceDiv.classList.add('sentenceDiv')
+  const sentence = document.createElement('p');
+  sentenceDiv.appendChild(sentence)
+  sentence.classList.add('quiz-item-sentence')
+  sentenceDiv.textContent = quizItem.sentence1[0][1];
+  return sentenceDiv;
+
+
+
+}
 
 module.exports = SingleQuizView;
