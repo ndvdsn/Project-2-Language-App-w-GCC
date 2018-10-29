@@ -151,7 +151,7 @@ db.vocabulary.insertMany([
     pronunciation_aid: "null",
     image: "images/school.jpg",
     category: "buildings",
-    sentence1: "school",
+    sentence1: "This is a school",
     sentence2: "school"
   },
   {
@@ -159,7 +159,7 @@ db.vocabulary.insertMany([
     pronunciation_aid: "null",
     image: "images/tower-block.jpg",
     category: "buildings",
-    sentence1: "tower block",
+    sentence1: "This is a tower block",
     sentence2: "tower block"
   },
   {
@@ -167,7 +167,7 @@ db.vocabulary.insertMany([
     pronunciation_aid: "null",
     image: "images/supermarket.jpg",
     category: "buildings",
-    sentence1: "supermarket",
+    sentence1: "This is a supermarket",
     sentence2: "supermarket"
   },
   {
@@ -175,7 +175,7 @@ db.vocabulary.insertMany([
     pronunciation_aid: "null",
     image: "images/community-centre.jpg",
     category: "buildings",
-    sentence1: "community centre",
+    sentence1: "This is a community centre",
     sentence2: "community centre"
   },
   {
@@ -183,7 +183,7 @@ db.vocabulary.insertMany([
     pronunciation_aid: "null",
     image: "images/train-station.jpg",
     category: "buildings",
-    sentence1: "train station",
+    sentence1: "This is a train station",
     sentence2: "train station"
   }
 ])
