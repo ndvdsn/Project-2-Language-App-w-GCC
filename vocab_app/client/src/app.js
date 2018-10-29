@@ -19,13 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // const vocabItem = new VocabItemView(mainContainer);
   // vocabItem.bindEvents()
-
+  const quizClick = document.querySelector('.quiz-select')
   const quizItem = new SingleQuizView(mainContainer);
-  quizItem.bindEvents()
+    quizClick.addEventListener('click', () => {
+          quizItem.bindEvents()
+  })
+
+
 
 
   const missingWordQuiz = new MissingWordQuiz();
-  // missingWordQuiz.getQuizData() //test purposes
+  missingWordQuiz.getQuizData()
 
 
 
