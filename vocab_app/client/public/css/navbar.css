@@ -1,14 +1,15 @@
 .navbar {
-    overflow: hidden;
-    background-color: #333;
-    font-family: Arial, Helvetica, sans-serif;
-    display: inline-flex;
-    list-style: none;
-    text-decoration: none;
-    color: white;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between
+  padding:0;
+  margin:0;
+  background-color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-flex;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .navbar ul {
@@ -38,9 +39,12 @@
 
 .navbar ul:hover, .top-level:hover{
     background-color: red;
+    cursor: pointer;
 }
 
 #category-select{
+    margin:0;
+    padding:0;
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -50,6 +54,8 @@
 }
 
 #category-select ul {
+  margin:0;
+  padding:15px, 0;
   background-color: black;
   margin-right: 0;
     float: none;
@@ -60,22 +66,26 @@
     text-align: left;
 }
 
-#category-select ul:hover {
-    background-color: #ddd;
+#category-select li{
+  margin:0;
+  padding:0;
 }
-
 .top-level:hover #category-select {
+
     display: block;
     background-color: black;
+    cursor: pointer;
 }
 
 .category-chosen{
   width: 100%;
   list-style: none;
   color: white;
-  margin: 10px 0;
+  margin: 0;
 }
 
 .category-chosen:hover{
+
   background-color: red;
+  cursor: pointer;
 }
