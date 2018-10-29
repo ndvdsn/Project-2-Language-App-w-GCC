@@ -4,13 +4,6 @@ const SingleQuizView = function (container) {
   this.container = container;
 };
 
-// VocabItemView.prototype.bindEvents = function () {
-//   PubSub.subscribe('Vocab:data-retrieved', (event) => {
-//     this.renderItem(event.detail[1]);
-//
-//   }
-// )
-// };
 
 
 SingleQuizView.prototype.bindEvents = function () {
