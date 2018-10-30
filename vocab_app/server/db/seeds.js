@@ -91,6 +91,14 @@ db.vocabulary.insertMany([
     sentence2: "My shorts are for sunny days"
   },
   {
+    name: "jumper",
+    pronunciation_aid: "null",
+    image: "images/jumper.jpg",
+    category: "clothes",
+    sentence1: "the jumper is made of wool",
+    sentence2: "I have a blue jumper"
+  },
+  {
     name: "mountain",
     pronunciation_aid: "null",
     image: "images/mountain.jpg",
@@ -111,7 +119,7 @@ db.vocabulary.insertMany([
     pronunciation_aid: "null",
     image: "images/field.jpg",
     category: "landscape",
-    sentence1: "the field is green",
+    sentence1: "the field is full of wheat",
     sentence2: "the cows in the field eat grass"
   },
   {
@@ -127,7 +135,7 @@ db.vocabulary.insertMany([
     pronunciation_aid: "null",
     image: "images/tree.jpg",
     category: "landscape",
-    sentence1: "the tree is in the forest",
+    sentence1: "the tree is green",
     sentence2: "I like to climb trees"
   },
   {
@@ -143,7 +151,7 @@ db.vocabulary.insertMany([
     pronunciation_aid: "null",
     image: "images/house.jpg",
     category: "buildings",
-    sentence1: "the house has four windows",
+    sentence1: "the house has many windows",
     sentence2: "The people live in a house"
   },
   {
