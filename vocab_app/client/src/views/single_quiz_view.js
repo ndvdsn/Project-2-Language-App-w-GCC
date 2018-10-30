@@ -11,7 +11,7 @@ SingleQuizView.prototype.bindEvents = function () {
     quizClick.addEventListener('click', () => {
       const objectArray = event.detail
     const object = objectArray[Math.floor(Math.random()*objectArray.length)];
-    
+
         this.renderQuizItem(object);
     })
 
@@ -60,11 +60,14 @@ SingleQuizView.prototype.createSentence = function (quizItem) {
   const sentenceb = document.createElement('p')
   sentenceb.textContent = quizItem.sentence1[1];
   sentenceb.style.display = "contents"
-  sentencea.appendChild(sentenceb)
+  sentencea.appendChild(sentenceb);
+  const button = document.createElement('button');
+  button.textContent = "submit"
+  button.classList.add('submitSentence')
+  sentenceDiv.appendChild(button);
   return sentenceDiv;
 
 }
-
 
 
 module.exports = SingleQuizView;

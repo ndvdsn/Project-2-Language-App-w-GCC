@@ -1,15 +1,26 @@
+.bar-container{
+  display:flex;
+  width:100%;
+  background-color: pink;
+}
+.nav-container{
+  display:flex;
+  width: 70%;
+  background-color: blue;
+
+}
 .navbar {
   padding:0;
   margin:0;
-  background-color: #333;
+  background-color: yellow;
   font-family: Arial, Helvetica, sans-serif;
-  display: inline-flex;
+  /* display: inline-flex; */
   list-style: none;
   text-decoration: none;
   color: white;
   width: 100%;
   align-items: center;
-  justify-content: space-around;
+  justify-content:flex-start;
 }
 
 .navbar ul {
@@ -35,6 +46,7 @@
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+    width:33%;
 }
 
 .navbar ul:hover, .top-level:hover{
@@ -56,7 +68,7 @@
 #category-select ul {
   margin:0;
   padding:15px, 0;
-  background-color: black;
+  background-color: dark-blue;
   margin-right: 0;
     float: none;
     color: black;
@@ -88,4 +100,30 @@
 
   background-color: red;
   cursor: pointer;
+}
+#no-hover{
+  display: flex;
+  justify-content: flex-end;
+margin:0;
+padding:0;
+background-color: black;
+width:20%;
+padding-left: 10%;
+
+}
+#headphone-image{
+  background-color: black;
+  margin:0;
+  padding:0;
+  width:50px;
+  height: auto;
+  display:flex;
+  justify-content: flex-end;
+
+}
+
+
+#no-hover li{
+  background-color: black;
+  list-style: none;
 }
