@@ -71,16 +71,16 @@ db.vocabulary.insertMany([
     pronunciation_aid: "null",
     image: "images/shoes.jpg",
     category: "clothes",
-    sentence1: "the shoes are muddy",
-    sentence2: "Her shoes are green"
+    sentence1: "the shoes are blue",
+    sentence2: "i have one shoe for each foot"
   },
   {
-    name: "t-shirt",
+    name: "scarf",
     pronunciation_aid: "null",
-    image: "images/t-shirt.jpg",
+    image: "images/scarf.jpg",
     category: "clothes",
-    sentence1: "the t-shirt is in the washing machine",
-    sentence2: "His t-shirt is yellow"
+    sentence1: "the scarf is long",
+    sentence2: "His scarf is yellow"
   },
   {
     name: "shorts",
@@ -95,7 +95,7 @@ db.vocabulary.insertMany([
     pronunciation_aid: "null",
     image: "images/jumper.jpg",
     category: "clothes",
-    sentence1: "the jumper is made of wool",
+    sentence1: "the jumper is blue",
     sentence2: "I have a blue jumper"
   },
   {
@@ -103,8 +103,8 @@ db.vocabulary.insertMany([
     pronunciation_aid: "null",
     image: "images/mountain.jpg",
     category: "landscape",
-    sentence1: "the mountain is high",
-    sentence2: "the women climb the mountain"
+    sentence1: "the mountain is far away",
+    sentence2: "the mountain is covered in snow"
   },
   {
     name: "river",
@@ -115,12 +115,12 @@ db.vocabulary.insertMany([
     sentence2: "i like to throw stones into the river"
   },
   {
-    name: "field",
+    name: "road",
     pronunciation_aid: "null",
-    image: "images/field.jpg",
+    image: "images/road.jpg",
     category: "landscape",
-    sentence1: "the field is full of wheat",
-    sentence2: "the cows in the field eat grass"
+    sentence1: "the road is not safe",
+    sentence2: "we drive down the road in a car"
   },
   {
     name: "forest",
@@ -128,7 +128,7 @@ db.vocabulary.insertMany([
     image: "images/forest.jpg",
     category: "landscape",
     sentence1: "a forest has many trees",
-    sentence2: "I blah blah blah"
+    sentence2: "I planted a tree in a forest"
   },
   {
     name: "tree",
@@ -139,59 +139,59 @@ db.vocabulary.insertMany([
     sentence2: "I like to climb trees"
   },
   {
-    name: "path",
+    name: "park",
     pronunciation_aid: "null",
-    image: "images/path.jpg",
+    image: "images/park.jpg",
     category: "landscape",
-    sentence1: "the sheep are walking along the path",
-    sentence2: "a more complex sentence about paths but not in a heideggerian way"
+    sentence1: "the park has a pond",
+    sentence2: "we went to the park to play games"
   },
   {
-    name: "house",
+    name: "potatoes",
     pronunciation_aid: "null",
-    image: "images/house.jpg",
-    category: "buildings",
-    sentence1: "the house has many windows",
-    sentence2: "The people live in a house"
+    image: "images/potatoes.jpg",
+    category: "food",
+    sentence1: "potatoes come out of the ground",
+    sentence2: "My dad mashes potatoes"
   },
   {
-    name: "school",
+    name: "apple",
     pronunciation_aid: "null",
-    image: "images/school.jpg",
-    category: "buildings",
-    sentence1: "This is a school",
-    sentence2: "school"
+    image: "images/apple.jpg",
+    category: "food",
+    sentence1: "apples are often green",
+    sentence2: "i have an apple in my bag"
   },
   {
-    name: "tower block",
+    name: "sandwich",
     pronunciation_aid: "null",
-    image: "images/tower-block.jpg",
-    category: "buildings",
-    sentence1: "This is a tower block",
-    sentence2: "tower block"
+    image: "images/sandwich.jpg",
+    category: "food",
+    sentence1: "a cheese and ham sandwich",
+    sentence2: "my favourite sandwich filling is jam"
   },
   {
-    name: "supermarket",
+    name: "grapefruit",
     pronunciation_aid: "null",
-    image: "images/supermarket.jpg",
-    category: "buildings",
-    sentence1: "This is a supermarket",
-    sentence2: "supermarket"
+    image: "images/grapefruit.jpg",
+    category: "food",
+    sentence1: "grapefruit is sour",
+    sentence2: "i have a special spoon for eating grapefruit"
   },
   {
-    name: "community centre",
+    name: "pasta",
     pronunciation_aid: "null",
-    image: "images/community-centre.jpg",
-    category: "buildings",
-    sentence1: "This is a community centre",
-    sentence2: "community centre"
+    image: "images/pasta.jpg",
+    category: "food",
+    sentence1: "pasta starts out hard and then you cook it until it gets soft",
+    sentence2: "something about pasta"
   },
   {
-    name: "train station",
+    name: "sausages",
     pronunciation_aid: "null",
-    image: "images/train-station.jpg",
-    category: "buildings",
-    sentence1: "This is a train station",
-    sentence2: "train station"
+    image: "images/sausages.jpg",
+    category: "food",
+    sentence1: "there are five sausages",
+    sentence2: "i don't like sausages"
   }
 ])
