@@ -4,6 +4,8 @@ const VocabGridView = require('./views/vocab_grid_view.js');
 const BannerView = require('./views/banner_view.js');
 const MissingWordQuiz = require('./models/missing_word_quiz.js');
 const SingleQuizView = require('./views/single_quiz_view.js');
+const CategoryView = require('./views/category_view.js')
+
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('javascript loaded');
@@ -11,11 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const bannerView = new BannerView(bannerContainer)
   const bannerClass = bannerView.getSeason();
   bannerContainer.classList.add(bannerClass)
-  console.log('Currently it is ' + bannerView.getSeason());
-  const mainContainer = document.querySelector(".grid-view");
-  const vocabGrid = new VocabGridView(mainContainer);
-  vocabGrid.bindEvents()
 
+
+
+  const mainContainer = document.querySelector(".grid-view");
+  // const vocabGrid = new VocabGridView(mainContainer);
+  // vocabGrid.bindEvents()
+  const categoryView = new CategoryView(mainContainer);
+  categoryView.bindEvents();
 
   const quizItem = new SingleQuizView(mainContainer);
   quizItem.bindEvents()

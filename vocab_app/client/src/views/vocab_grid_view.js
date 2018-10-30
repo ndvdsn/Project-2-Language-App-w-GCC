@@ -9,12 +9,8 @@ const VocabGridView = function (container) {
 
 
 VocabGridView.prototype.bindEvents = function () {
-  this.getSelection()
-  PubSub.subscribe('Vocab:data-retrieved', (event) => {
-    const vocabData = event.detail;
-    this.showMultiple(vocabData);
+  // this.getSelection()
 
-  });
   PubSub.subscribe('Vocab:uniqueCategoriesRetrieved', (event) => {
     this.populateCategoryDropdown(event.detail)
   })
@@ -33,7 +29,8 @@ VocabGridView.prototype.getSelection = function () {
   const categoryContainer = document.querySelector('#category-select')
   console.log(categoryContainer);
   categoryContainer.addEventListener('click', (event) => {
-  const categoryValue = event.target.value;
+    console.log(event.detail);
+  //const categoryValue = event.target.value;
   PubSub.publish('vocabGridView:publishValue', categoryValue)
   }
 )
