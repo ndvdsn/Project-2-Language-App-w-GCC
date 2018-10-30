@@ -68,6 +68,8 @@ VocabItemView.prototype.clickImage = function (image, vocabItem) {
       nameStyleSetting.style.display = "flex"
 
       const newUtterance = new SpeechSynthesisUtterance(`${vocabItem.name}`);
+      newUtterance.rate = 0.8
+      newUtterance.pitch = 2
       speechSynthesis.speak(newUtterance)
 
 

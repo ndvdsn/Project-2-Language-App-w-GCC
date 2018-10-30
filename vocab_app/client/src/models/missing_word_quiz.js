@@ -23,10 +23,14 @@ MissingWordQuiz.prototype.getQuizData = function () {
 
 MissingWordQuiz.prototype.checkTextSubmitted = function () {
   PubSub.subscribe('SingleQuizView:textSubmitted', (event) => {
-    const result = if (event.detail[0] === event.detail[1]){
-      return true;
-    }else{return false;}
+    let result = false
+    if(event.detail[0] === event.detail[1]){
+      result = true;
+    }
+    
+    PubSub.publish('MissingWordQuiz:feedback', result)
   })
-  PubSub.publish('MissingWordQuiz:feedback', result)
+
 };
+
 module.exports = MissingWordQuiz;
