@@ -21,4 +21,7 @@ MissingWordQuiz.prototype.getQuizData = function () {
   .catch(console.error);
 };
 
+MissingWordQuiz.prototype.checkTextSubmitted = function () {
+  
+};
 module.exports = MissingWordQuiz;

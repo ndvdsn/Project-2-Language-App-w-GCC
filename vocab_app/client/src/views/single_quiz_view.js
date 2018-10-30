@@ -13,6 +13,7 @@ SingleQuizView.prototype.bindEvents = function () {
     const object = objectArray[Math.floor(Math.random()*objectArray.length)];
 
         this.renderQuizItem(object);
+        this.submitClicked()
     })
 
   });
@@ -55,6 +56,7 @@ SingleQuizView.prototype.createSentence = function (quizItem) {
   const form = document.createElement('form')
   sentencea.appendChild(form)
   const input = document.createElement('input')
+  input.classList.add('input-word')
   input.type = "text";
   form.appendChild(input)
   const sentenceb = document.createElement('p')
@@ -68,7 +70,16 @@ SingleQuizView.prototype.createSentence = function (quizItem) {
   return sentenceDiv;
 
 }
+SingleQuizView.prototype.submitClicked = function () {
 
+
+  const submitPosition = document.querySelector('.submitSentence')
+  submitPosition.addEventListener('click', () => {
+    const getInputContainer = document.querySelector('.input-word')
+    const text = getInputContainer.value
+    PubSub.publish('SingleQuizView:textSubmitted', text)
+  })
+};
 
 
 module.exports = SingleQuizView;
