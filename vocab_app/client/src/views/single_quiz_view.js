@@ -13,11 +13,16 @@ SingleQuizView.prototype.bindEvents = function () {
     const object = objectArray[Math.floor(Math.random()*objectArray.length)];
 
         this.renderQuizItem(object);
-        this.submitClicked(object)
+        this.submitClicked(object);
     })
-
   });
 
+  PubSub.subscribe('MissingWordQuiz:feedback', (event) => {
+    console.log('hello');
+
+    console.log(event.detail);
+    this.displayQuizFeedback(event.detail);
+  })
 };
 
 SingleQuizView.prototype.renderQuizItem = function (quizItem) {
@@ -81,10 +86,30 @@ SingleQuizView.prototype.submitClicked = function (quizItem) {
     validationArray.push(text, quizItem.name);
     PubSub.publish('SingleQuizView:textSubmitted', validationArray)
   })
+
 };
 
-SingleQuizView.prototype.methodName = function () {
+SingleQuizView.prototype.displayQuizFeedback = function (response) {
 //subscribe to result channel
+  const getInputContainer = document.querySelector('.input-word')
+  if (response === true) {
+    console.log('yes');
+    // concatenate the first part of the sentence, the form input and the second part of the sentence
+    // sentencea.textContent
+    // form.input
+    // sentenceb.textContent
+    // change the form input box to green background
+    document.querySelector('.input-word').style.backgroundColor = 'green'
+    document.querySelector('.input-word').style.color = "white"
+  } else {
+
+    document.querySelector('.input-word').style.backgroundColor = 'red'
+    document.querySelector('.input-word').value=null;
+
+  }
+
+
+
 // shows info based on result (if statement)
 //change input border based on response
 //if correct read back the sentence
