@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const missingWordQuiz = new MissingWordQuiz();
   missingWordQuiz.getQuizData()
-
+  missingWordQuiz.checkTextSubmitted()
 
 
   const vocab = new Vocab();

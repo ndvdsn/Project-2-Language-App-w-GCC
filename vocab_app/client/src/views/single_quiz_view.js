@@ -13,7 +13,7 @@ SingleQuizView.prototype.bindEvents = function () {
     const object = objectArray[Math.floor(Math.random()*objectArray.length)];
 
         this.renderQuizItem(object);
-        this.submitClicked()
+        this.submitClicked(object)
     })
 
   });
@@ -70,14 +70,16 @@ SingleQuizView.prototype.createSentence = function (quizItem) {
   return sentenceDiv;
 
 }
-SingleQuizView.prototype.submitClicked = function () {
+SingleQuizView.prototype.submitClicked = function (quizItem) {
 
 
   const submitPosition = document.querySelector('.submitSentence')
   submitPosition.addEventListener('click', () => {
     const getInputContainer = document.querySelector('.input-word')
     const text = getInputContainer.value
-    PubSub.publish('SingleQuizView:textSubmitted', text)
+    const validationArray = [];
+    validationArray.push(text, quizItem.name);
+    PubSub.publish('SingleQuizView:textSubmitted', validationArray)
   })
 };
 
