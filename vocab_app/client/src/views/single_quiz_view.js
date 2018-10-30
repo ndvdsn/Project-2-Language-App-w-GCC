@@ -70,4 +70,5 @@ SingleQuizView.prototype.createSentence = function (quizItem) {
 }
 
 
+
 module.exports = SingleQuizView;
