@@ -83,5 +83,13 @@ SingleQuizView.prototype.submitClicked = function (quizItem) {
   })
 };
 
+SingleQuizView.prototype.methodName = function () {
+//subscribe to result channel
+// shows info based on result (if statement)
+//change input border based on response
+//if correct read back the sentence
+//if incorrect voice says try again and input cleared
 
+
+};
 module.exports = SingleQuizView;
