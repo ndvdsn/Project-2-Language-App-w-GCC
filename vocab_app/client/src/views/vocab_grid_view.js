@@ -1,6 +1,7 @@
 const PubSub = require('../helpers/pub_sub.js');
 const VocabItemView = require('./vocab_item_view.js');
 const Vocab = require('../models/vocab.js');
+const SingleQuizView = require('./single_quiz_view.js')
 
 const VocabGridView = function (container) {
   this.container = container;
@@ -9,11 +10,12 @@ const VocabGridView = function (container) {
 
 
 VocabGridView.prototype.bindEvents = function () {
-  // this.getSelection()
 
-  PubSub.subscribe('Vocab:uniqueCategoriesRetrieved', (event) => {
-    this.populateCategoryDropdown(event.detail)
-  })
+  // PubSub.subscribe('Vocab:uniqueCategoriesRetrieved', (event) => {
+  //   this.populateCategoryDropdown(event.detail)
+  // })
+
+
 };
 
 VocabGridView.prototype.showMultiple = function (vocabData) {
@@ -23,6 +25,12 @@ VocabGridView.prototype.showMultiple = function (vocabData) {
   const vocabItemView = new VocabItemView(gridDiv)
   this.container.appendChild(gridDiv);
   vocabData.forEach((item) => vocabItemView.renderItem(item))
+  const getQuizButton = document.createElement('button');
+  getQuizButton.textContent = "=>"
+  getQuizButton.classList.add('go-to-quiz')
+  getQuizButton.value = vocabData[0].category
+  gridDiv.appendChild(getQuizButton)
+  this.quizClick()
 };
 
 VocabGridView.prototype.getSelection = function () {
@@ -53,5 +61,14 @@ VocabGridView.prototype.createLi = function (category, index) {
   catLi.value = index;
   catLi.textContent = category
   return catLi
+};
+
+VocabGridView.prototype.quizClick = function () {
+  const quizClick = document.querySelector('.go-to-quiz')
+
+  quizClick.addEventListener('click', () => {
+    PubSub.publish('VocabGridView:quizCategorySelected', event.target.value)
+
+  })
 };
 module.exports = VocabGridView;

@@ -5,6 +5,7 @@ const BannerView = require('./views/banner_view.js');
 const MissingWordQuiz = require('./models/missing_word_quiz.js');
 const SingleQuizView = require('./views/single_quiz_view.js');
 const CategoryView = require('./views/category_view.js')
+const QuizView = require('./views/quiz_view.js')
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,14 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const mainContainer = document.querySelector(".grid-view");
-  // const vocabGrid = new VocabGridView(mainContainer);
+  const vocabGrid = new VocabGridView(mainContainer);
   // vocabGrid.bindEvents()
   const categoryView = new CategoryView(mainContainer);
   categoryView.bindEvents();
 
-  const quizItem = new SingleQuizView(mainContainer);
-  quizItem.bindEvents()
-
+  // const quizItem = new SingleQuizView();
+  // quizItem.bindEvents()
 
   const missingWordQuiz = new MissingWordQuiz();
   missingWordQuiz.getQuizData()
@@ -37,4 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
   vocab.getData();
   vocab.getCategories();
 
+  const quizView = new QuizView(mainContainer)
+  quizView.bindEvents();
 });

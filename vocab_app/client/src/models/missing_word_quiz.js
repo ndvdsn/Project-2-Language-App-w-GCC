@@ -9,17 +9,21 @@ const MissingWordQuiz = function (url) {
 };
 
 MissingWordQuiz.prototype.getQuizData = function () {
-  this.request.get()
-  .then((data) => {
-    data.forEach((item) => {
-    this.quizData.push({name: item.name, image: item.image, sentence1: item.sentence1.split(item.name)})
-    return this.quizData;
 
-  })
-    PubSub.publish('MissingWordQuiz:data-retrieved', this.quizData)
-})
-  .catch(console.error);
-};
+  PubSub.subscribe('VocabGridView:quizCategorySelected', (event) => {
+      this.request.get()
+      .then((data) => {
+        data.forEach(item => {
+        if(item.category === event.detail){
+          this.quizData.push({name: item.name, image: item.image, sentence1: item.sentence1.split(item.name)})
+        }})
+        PubSub.publish('MissingWordQuiz:data-retrieved', this.quizData)
+    })
+
+    })
+
+  }
+
 
 
 MissingWordQuiz.prototype.checkTextSubmitted = function () {
