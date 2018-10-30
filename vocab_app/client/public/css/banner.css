@@ -8,6 +8,7 @@
   align-self: center;
   padding: 30px;
   height: 100%;
+
 }
 
 .Winter{
@@ -32,8 +33,9 @@
 }
 
 .Autumn{
-  background-image: url("../images/autumn.jpeg");
+  background-image: url("../images/autumn_.jpeg");
   background-size: cover;
+  background-color: #F39237;
   color: #FCFAFF;
   font-weight: bolder;
 }

@@ -12,12 +12,12 @@
 .navbar {
   padding:0;
   margin:0;
-  background-color: black;
+  background-color: #191923;
   font-family: Roboto;
   display:flex;
   list-style: none;
   text-decoration: none;
-  color: white;
+  color: #FBFEF9;
   width: 100%;
   align-items: center;
   justify-content:center;
@@ -27,7 +27,7 @@
 
     float: left;
     font-size: 16px;
-    color: white;
+    color: #FBFEF9;
     text-align: center;
     text-decoration: none;
 }
@@ -50,7 +50,7 @@
 }
 
 .navbar ul:hover, .top-level:hover{
-    background-color: red;
+    background-color: #BF1363;
     cursor: pointer;
     padding:16px;
 }
@@ -100,7 +100,7 @@
 
 .category-chosen:hover{
 
-  background-color: red;
+  background-color: #BF1363;
   cursor: pointer;
 }
 #no-hover{
@@ -114,7 +114,7 @@
 
 }
 #headphone-image{
-  background-color: black;
+  background-color: #191923;
   margin:0;
   padding-left: 15px;
   width:50px;
@@ -126,6 +126,6 @@
 
 
 #no-hover li{
-  background-color: black;
+  background-color: #191923;
   list-style: none;
 }
