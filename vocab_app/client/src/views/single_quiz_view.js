@@ -13,6 +13,7 @@ SingleQuizView.prototype.bindEvents = function () {
     const object = objectArray[Math.floor(Math.random()*objectArray.length)];
 
         this.renderQuizItem(object);
+        this.submitClicked(object)
     })
 
   });
@@ -55,6 +56,7 @@ SingleQuizView.prototype.createSentence = function (quizItem) {
   const form = document.createElement('form')
   sentencea.appendChild(form)
   const input = document.createElement('input')
+  input.classList.add('input-word')
   input.type = "text";
   form.appendChild(input)
   const sentenceb = document.createElement('p')
@@ -68,7 +70,26 @@ SingleQuizView.prototype.createSentence = function (quizItem) {
   return sentenceDiv;
 
 }
+SingleQuizView.prototype.submitClicked = function (quizItem) {
 
 
+  const submitPosition = document.querySelector('.submitSentence')
+  submitPosition.addEventListener('click', () => {
+    const getInputContainer = document.querySelector('.input-word')
+    const text = getInputContainer.value
+    const validationArray = [];
+    validationArray.push(text, quizItem.name);
+    PubSub.publish('SingleQuizView:textSubmitted', validationArray)
+  })
+};
 
+SingleQuizView.prototype.methodName = function () {
+//subscribe to result channel
+// shows info based on result (if statement)
+//change input border based on response
+//if correct read back the sentence
+//if incorrect voice says try again and input cleared
+
+
+};
 module.exports = SingleQuizView;
