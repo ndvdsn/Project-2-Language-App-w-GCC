@@ -83,7 +83,7 @@ SingleQuizView.prototype.submitClicked = function (quizItem) {
     const getInputContainer = document.querySelector('.input-word')
     const text = getInputContainer.value
     const validationArray = [];
-    validationArray.push(text, quizItem.name);
+    validationArray.push(text, quizItem.name, quizItem.sentence1);
     PubSub.publish('SingleQuizView:textSubmitted', validationArray)
   })
 
@@ -92,18 +92,24 @@ SingleQuizView.prototype.submitClicked = function (quizItem) {
 SingleQuizView.prototype.displayQuizFeedback = function (response) {
 //subscribe to result channel
   const getInputContainer = document.querySelector('.input-word')
-  if (response === true) {
-    console.log('yes');
+  if (response[0] === true) {
     // concatenate the first part of the sentence, the form input and the second part of the sentence
-    // sentencea.textContent
     // form.input
     // sentenceb.textContent
+
+    const newUtterance = new SpeechSynthesisUtterance(`${response[2][0]} ${response[1]} ${response[2][1]}`);
+    speechSynthesis.speak(newUtterance)
+
+    // console.log(`${response[2][0]} ${response[1]} ${response[2][1]}`);
+
+
     // change the form input box to green background
     document.querySelector('.input-word').style.backgroundColor = 'green'
     document.querySelector('.input-word').style.color = "white"
   } else {
 
     document.querySelector('.input-word').style.backgroundColor = 'red'
+    document.querySelector('.input-word').style.color = "white"
     document.querySelector('.input-word').value=null;
 
   }

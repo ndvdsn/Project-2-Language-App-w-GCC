@@ -28,7 +28,9 @@ MissingWordQuiz.prototype.checkTextSubmitted = function () {
    if(event.detail[0] === event.detail[1]){
      result = true;
    }
-   PubSub.publish('MissingWordQuiz:feedback', result)
+   const resultArray = []
+   resultArray.push(result, event.detail[1], event.detail[2])
+   PubSub.publish('MissingWordQuiz:feedback', resultArray)
  })
 
 };
