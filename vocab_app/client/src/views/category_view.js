@@ -37,14 +37,15 @@ CategoryView.prototype.renderCategories = function (categories, index) {
   CategoryView.prototype.getSelection = function () {
   const categoryContainer = document.querySelector('.category-grid-container')
   categoryContainer.addEventListener('click', (event) => {
-    console.log(event.target.value);
+    console.log('on click',event.target.value);
   const categoryValue = event.target.value;
   PubSub.publish('vocabGridView:publishValue', categoryValue)
   }
 )};
 
 CategoryView.prototype.returnHome = function () {
-  console.log('second hello');
-  this.renderCategories(this.categories)
+  console.log('returnhome',this.categories[0]);
+  this.renderCategories(this.categories, this.categories.index)
+  this.getSelection()
 };
 module.exports = CategoryView;
