@@ -15,9 +15,3 @@
 .category-image:hover{
   cursor:pointer;
 }
-
-p{
-
-  flex-direction: row;
-  justify-content: space-evenly;
-}

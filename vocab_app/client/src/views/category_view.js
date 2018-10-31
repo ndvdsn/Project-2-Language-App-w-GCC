@@ -40,4 +40,13 @@ CategoryView.prototype.renderCategories = function (categories, index) {
   PubSub.publish('vocabGridView:publishValue', categoryValue)
   }
 )};
+
+CategoryView.prototype.returnHome = function () {
+  console.log('second hello');
+  PubSub.subscribe('Vocab:uniqueCategoriesRetrieved', (event) => {
+    console.log(event);
+    this.renderCategories(event.detail)
+    this.getSelection()
+  })
+};
 module.exports = CategoryView;
