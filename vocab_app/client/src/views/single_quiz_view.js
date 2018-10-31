@@ -5,20 +5,20 @@ const SingleQuizView = function (container) {
 };
 
 SingleQuizView.prototype.bindEvents = function () {
-  PubSub.subscribe('MissingWordQuiz:data-retrieved', (event) => {
-    const quizClick = document.querySelector('.quiz-select')
+  // PubSub.subscribe('MissingWordQuiz:data-retrieved', (event) => {
+  //   const quizClick = document.querySelector('.quiz-select')
+  //
+  //   quizClick.addEventListener('click', () => {
+  //     const objectArray = event.detail
+  //   const object = objectArray[Math.floor(Math.random()*objectArray.length)];
+  //
+  //       this.renderQuizItem(object);
+  //       this.submitClicked(object);
+  //   })
+  // });
 
-    quizClick.addEventListener('click', () => {
-      const objectArray = event.detail
-    const object = objectArray[Math.floor(Math.random()*objectArray.length)];
-
-        this.renderQuizItem(object);
-        this.submitClicked(object);
-    })
-  });
 
   PubSub.subscribe('MissingWordQuiz:feedback', (event) => {
-    console.log('hello');
 
     console.log(event.detail);
     this.displayQuizFeedback(event.detail);
@@ -28,7 +28,7 @@ SingleQuizView.prototype.bindEvents = function () {
 SingleQuizView.prototype.renderQuizItem = function (quizItem) {
   this.container.innerHTML = " "
   const itemDiv = document.createElement('div');
-  itemDiv.id = `quiz-item-${quizItem.index}`
+  //itemDiv.id = `quiz-item-${quizItem.index}`
   itemDiv.classList.add('item-div')
   this.container.appendChild(itemDiv);
   const image = this.createImage(quizItem);
@@ -90,20 +90,15 @@ SingleQuizView.prototype.submitClicked = function (quizItem) {
 };
 
 SingleQuizView.prototype.displayQuizFeedback = function (response) {
-//subscribe to result channel
+
   const getInputContainer = document.querySelector('.input-word')
   if (response[0] === true) {
-    // concatenate the first part of the sentence, the form input and the second part of the sentence
-    // form.input
-    // sentenceb.textContent
+
 
     const newUtterance = new SpeechSynthesisUtterance(`${response[2][0]} ${response[1]} ${response[2][1]}`);
     speechSynthesis.speak(newUtterance)
 
-    // console.log(`${response[2][0]} ${response[1]} ${response[2][1]}`);
 
-
-    // change the form input box to green background
     document.querySelector('.input-word').style.backgroundColor = 'green'
     document.querySelector('.input-word').style.color = "white"
   } else {
@@ -114,12 +109,6 @@ SingleQuizView.prototype.displayQuizFeedback = function (response) {
 
   }
 
-
-
-// shows info based on result (if statement)
-//change input border based on response
-//if correct read back the sentence
-//if incorrect voice says try again and input cleared
 
 
 };

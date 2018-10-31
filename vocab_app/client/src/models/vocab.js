@@ -25,8 +25,10 @@ Vocab.prototype.getCategories = function () {
   this.request.get()
   .then((data) => {
 
-    this.categoryList = data.map(item => item.category).filter((category, index, categories) =>
-      categories.indexOf(category)===index)
+    this.categoryList = data.filter((obj, pos, arr) => {
+         return arr.map(mapObj => mapObj.category).indexOf(obj.category) === pos;
+     });
+
       PubSub.publish('Vocab:uniqueCategoriesRetrieved', this.categoryList)
     })
 
@@ -35,7 +37,7 @@ Vocab.prototype.getCategories = function () {
 Vocab.prototype.getByCategory = function (index) {
   this.request.get()
   .then((data) =>{
-  const categoryChosen = this.categoryList[index]
+  const categoryChosen = this.categoryList[index].category
   const categoryFiltered = data.filter((item) => {return item.category === categoryChosen})
   PubSub.publish('Vocab:data-retrieved', categoryFiltered)
 })};
