@@ -5,8 +5,8 @@ body {
   color: dark-blue;
   font-style:normal;
   font-size: 24px;
-  color:#1f295c
-  background-color: #c7c8c7;
+  color:#1f295c;
+  background-color: #FBFEF9;
 
 }
 
@@ -16,13 +16,20 @@ height: 30px;
 border-radius:50%;
 background-size: 100%;
 }
-
-
+.main-container{
+  background-color: #FBFEF9;
+}
+.grid-view{
+  max-width: 60%;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 5%;
+}
 
 .grid-container{
   padding-top: 30px;
   padding: 15px;
-  background-color: #c7c8c7;
+  background-color: #FBFEF9;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
@@ -30,19 +37,20 @@ background-size: 100%;
 .item-div{
 
 
-  padding: 20px;
+  /* padding: 20px; */
   min-height:250px;
 
 }
 .image-div{
 
-  padding: 20px;
+  /* padding: 20px; */
   border-radius: 15%;
 }
 .vocab-item-image {
   height: 200px;
   width: 200px;
   border-radius: 15%;
+  border:solid;
 }
 
 .vocab-item-image:hover{

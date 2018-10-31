@@ -1,0 +1,17 @@
+.category-grid-container{
+  padding-top: 30px;
+  padding: 15px;
+  background-color: #FBFEF9;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.category-image{
+  height: 200px;
+  width: 200px;
+  border-radius: 15%;
+  border:solid;
+}
+
+.category-image:hover{
+  cursor:pointer;
+}

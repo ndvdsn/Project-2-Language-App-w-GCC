@@ -11,6 +11,7 @@ SingleCategoryView.prototype.renderCategory = function (category, index) {
   div.classList.add('category-container');
   this.container.appendChild(div);
   const image = document.createElement('img');
+  image.classList.add('category-image')
   div.appendChild(image);
   image.src = category.image;
   image.value = index

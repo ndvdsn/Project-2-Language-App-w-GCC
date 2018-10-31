@@ -69,7 +69,7 @@ SingleQuizView.prototype.createSentence = function (quizItem) {
   sentenceb.style.display = "contents"
   sentencea.appendChild(sentenceb);
   const button = document.createElement('button');
-  button.textContent = "submit"
+  button.textContent = "=>"
   button.classList.add('submitSentence')
   sentenceDiv.appendChild(button);
   return sentenceDiv;
