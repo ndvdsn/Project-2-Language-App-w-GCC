@@ -96,6 +96,7 @@ SingleQuizView.prototype.displayQuizFeedback = function (response) {
 
 
     const newUtterance = new SpeechSynthesisUtterance(`${response[2][0]} ${response[1]} ${response[2][1]}`);
+    newUtterance.rate = 0.7
     speechSynthesis.speak(newUtterance)
 
 
