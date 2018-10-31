@@ -4,10 +4,12 @@ const VocabGridView = require('./vocab_grid_view.js')
 
 const CategoryView = function(container){
   this.container = container;
+  this.categories = []
 };
 
 CategoryView.prototype.bindEvents = function () {
   PubSub.subscribe('Vocab:uniqueCategoriesRetrieved', (event) => {
+    this.categories = event.detail
     this.renderCategories(event.detail)
     this.getSelection()
   })
@@ -43,10 +45,6 @@ CategoryView.prototype.renderCategories = function (categories, index) {
 
 CategoryView.prototype.returnHome = function () {
   console.log('second hello');
-  PubSub.subscribe('Vocab:uniqueCategoriesRetrieved', (event) => {
-    console.log(event);
-    this.renderCategories(event.detail)
-    this.getSelection()
-  })
+  this.renderCategories(this.categories)
 };
 module.exports = CategoryView;
