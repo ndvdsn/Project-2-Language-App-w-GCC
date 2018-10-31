@@ -18,11 +18,7 @@ SingleQuizView.prototype.bindEvents = function () {
   // });
 
 
-  PubSub.subscribe('MissingWordQuiz:feedback', (event) => {
 
-    console.log(event.detail);
-    this.displayQuizFeedback(event.detail);
-  })
 };
 
 SingleQuizView.prototype.renderQuizItem = function (quizItem) {
@@ -36,6 +32,13 @@ SingleQuizView.prototype.renderQuizItem = function (quizItem) {
 
   const sentence = this.createSentence(quizItem);
   itemDiv.appendChild(sentence);
+  return fetch(itemDiv)
+  .then((loaded) => this.submitClicked(quizItem))
+  .then(  PubSub.subscribe('MissingWordQuiz:feedback', (event) => {
+
+      console.log(event.detail);
+      this.displayQuizFeedback(event.detail);
+    }))
 
 
 };

@@ -9,12 +9,15 @@ const QuizView = function(container){
 QuizView.prototype.bindEvents = function () {
   PubSub.subscribe('MissingWordQuiz:data-retrieved', (event) => {
       const objectArray = event.detail
-      console.log(event.detail);
-    const object = objectArray[Math.floor(Math.random()*objectArray.length)];
+      const numberOfQuestions = objectArray.length
+    objectArray.forEach(object =>{
       const singleQuizView = new SingleQuizView(this.container)
-      console.log(object);
-        singleQuizView.renderQuizItem(object);
-        singleQuizView.submitClicked(object);
+
+        singleQuizView.renderQuizItem(object)
+        // singleQuizView.submitClicked(object)
+
+
+      })
   });
 PubSub.subscribe
   PubSub.subscribe('MissingWordQuiz:feedback', (event) => {
