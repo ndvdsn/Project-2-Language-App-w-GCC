@@ -57,6 +57,7 @@ VocabItemView.prototype.createImage = function (vocabItem) {
 VocabItemView.prototype.clickSpeaker = function (speaker, vocabItem) {
   speaker.addEventListener('click', () => {
     const newUtterance = new SpeechSynthesisUtterance(`${vocabItem.name}`);
+    newUtterance.rate = 0.8
     speechSynthesis.speak(newUtterance)
   })
 
